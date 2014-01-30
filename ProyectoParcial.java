@@ -49,7 +49,7 @@ public class ProyectoParcial
       // Asumiendo el primer arreglo es el menor
       min = i;
       for (int j = i + 1; j < list.length; j++) {
-        if (list[j] < list[min]) {
+        if (list[j] > list[min]) {
           min = j;
           
         }
