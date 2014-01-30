@@ -65,11 +65,21 @@ public class ProyectoParcial
   }
   public static void main (String [] args) throws IOException
   {
+    long start, generarDatos, sortDownUp, sortUpDown;
     int num=10000;
     int[] list= new int[num];
+    start = System.nanoTime();//Tiempo en el que empezo
     list=generateRandom(num);
+    generarDatos = System.nanoTime();//Tiempo el que termino de generar los datos
+    start = System.nanoTime();//Tiempo en el que empezo
     selectionSortDownUp(list);
+    sortDownUp = System.nanoTime();//Tiempo el que termino de generar los datos
+    start = System.nanoTime();//Tiempo en el que empezo
     selectionSortUpDown(list);
-    stdOut.println("Dame el primer valor");
+    sortUpDown = System.nanoTime();//Tiempo el que termino de generar los datos
+    stdOut.println("Total de numeros: "+list.length);
+    stdOut.println("Tiempo en Generar los datos: "+(generarDatos-start));
+    stdOut.println("Tiempo Sort de Menor a Mayor: "+(sortDownUp-start));
+    stdOut.println("Tiempo Sort de Mayor a Menor: "+(sortUpDown-start));
   }
 }
