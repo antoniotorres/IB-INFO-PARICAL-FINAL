@@ -65,21 +65,21 @@ public class ProyectoParcial
   }
   public static void main (String [] args) throws IOException
   {
-    long start, generarDatos, sortDownUp, sortUpDown;
+    long startgenerar, startDownUp, startUpDown, generarDatos, sortDownUp, sortUpDown;
     int num=10000;
     int[] list= new int[num];
-    start = System.nanoTime();//Tiempo en el que empezo
+    startgenerar = System.nanoTime();//Tiempo en el que empezo
     list=generateRandom(num);
     generarDatos = System.nanoTime();//Tiempo el que termino de generar los datos
-    start = System.nanoTime();//Tiempo en el que empezo
+    startDownUp = System.nanoTime();//Tiempo en el que empezo
     selectionSortDownUp(list);
     sortDownUp = System.nanoTime();//Tiempo el que termino de generar los datos
-    start = System.nanoTime();//Tiempo en el que empezo
-    selectionSortUpDown(list);
+    startUpDown = System.nanoTime();//Tiempo en el que empezo
+    //selectionSortUpDown(list);
     sortUpDown = System.nanoTime();//Tiempo el que termino de generar los datos
     stdOut.println("Total de numeros: "+list.length);
-    stdOut.println("Tiempo en Generar los datos: "+(generarDatos-start));
-    stdOut.println("Tiempo Sort de Menor a Mayor: "+(sortDownUp-start));
-    stdOut.println("Tiempo Sort de Mayor a Menor: "+(sortUpDown-start));
+    stdOut.println("Tiempo en Generar los datos: "+(generarDatos-startgenerar));
+    stdOut.println("Tiempo Sort de Menor a Mayor: "+(sortDownUp-startDownUp));
+    stdOut.println("Tiempo Sort de Mayor a Menor: "+(sortUpDown-startUpDown));
   }
 }
